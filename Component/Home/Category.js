@@ -10,13 +10,10 @@ import {styles} from '../../UI/Style';
 const Category = () => {
   const navigation = useNavigation();
   const {data: productsRes, isFetching, isSuccess} = useGetAllProductQuery();
-  const {data: category} = useGetCategoryQuery();
-  // console.log(category);
 
-  const categoryHandler = (data, index) => {
-    // console.log('data', data);
+  const categoryHandler = data => {
     const categoryPressHandler = () => {
-      navigation.navigate('CatDescription');
+      navigation.navigate('CatDescription', {catType: data.item});
     };
     return (
       <View style={styles.categoryView}>

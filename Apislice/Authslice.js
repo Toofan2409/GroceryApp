@@ -1,7 +1,7 @@
 import {configureStore, combineReducers} from '@reduxjs/toolkit';
 import {Apidata} from './Apislice';
 import {createSlice} from '@reduxjs/toolkit';
-
+import CartSlice from './CartSlice';
 const Initialstate = {user: {}};
 const Authslice = createSlice({
   name: 'authenticate',
@@ -19,9 +19,10 @@ const Authslice = createSlice({
   },
 });
 
-const reducer = combineReducers({
+export const reducer = combineReducers({
   [Apidata.reducerPath]: Apidata.reducer,
-  Authslice,
+  Authslice: Authslice.reducer,
+  CartSlice,
 });
 
 const Store = configureStore({

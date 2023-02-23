@@ -72,7 +72,7 @@ export const styles = StyleSheet.create({
     overflow: 'hidden',
     flexDirection: 'row',
     borderColor: '#ffffff',
-    backgroundColor: '#ddd5d5',
+    backgroundColor: '#daeed3',
     borderRadius: 5,
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
@@ -104,7 +104,7 @@ export const styles = StyleSheet.create({
     fontSize: 12,
     position: 'absolute',
     top: -28,
-    color: 'white',
+    color: 'black',
     fontWeight: '500',
   },
 
@@ -158,7 +158,7 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'green',
     elevation: 3,
-    borderColor: '#5e9f4b',
-    backgroundColor: '#5e9f4b',
+    borderColor: '#7bc991',
+    backgroundColor: '#7bc991',
   },
 });

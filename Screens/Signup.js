@@ -49,11 +49,11 @@ const Signup = ({navigation}) => {
   // 8URQuB2Vw1g0rLueix0UQ0pDF4I3
 
   const VerificationHandler = async () => {
+    setheight(400);
     try {
       const res = await Confirm.confirm(code);
       setuserdata(res);
       setConfirm(null);
-      setheight(400);
 
       // if (authicate === true) {
       //   navigation.navigate('home');
@@ -150,6 +150,9 @@ const Signup = ({navigation}) => {
           <TextInput
             onChangeText={e => {
               setcode(e);
+            }}
+            onFocus={() => {
+              setheight(260);
             }}
             placeholder="Enter OTP"
             style={styles.textinput}

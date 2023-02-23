@@ -10,9 +10,28 @@ export const Apidata = createApi({
       query: () => ({url: `/products/categories`, method: 'GET'}),
     }),
     GetCategory: builder.query({
-      query: () => ({url: `/products/category/smartphones`, method: 'GET'}),
+      query: body => ({url: `/products/category/${body}`, method: 'GET'}),
+    }),
+    AddtoCart: builder.mutation({
+      query: body => ({
+        url: '/carts/add',
+        headers: {'Content-Type': 'application/json'},
+        method: 'POST',
+        body,
+      }),
+    }),
+    GetCartOfuser: builder.query({
+      query: () => ({
+        url: `/carts/user/1`,
+        method: 'GET',
+      }),
     }),
   }),
 });
 
-export const {useGetAllProductQuery, useGetCategoryQuery} = Apidata;
+export const {
+  useGetAllProductQuery,
+  useGetCategoryQuery,
+  useAddtoCartMutation,
+  useGetCartOfuserQuery,
+} = Apidata;
